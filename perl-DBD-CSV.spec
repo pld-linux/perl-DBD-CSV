@@ -28,7 +28,7 @@ DBD-CSV - sterownik DBI dla plików CSV.
 
 %build
 perl Makefile.PL
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
