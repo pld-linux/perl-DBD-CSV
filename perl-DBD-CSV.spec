@@ -2,7 +2,7 @@
 Summary:	DBD-CSV perl module
 Summary(pl):	Modu³ perla DBD-CSV
 Name:		perl-DBD-CSV
-Version:	0.1022
+Version:	0.1023
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/DBD/CSV
   sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-  mv .packlist.new .packlist
+  mv -f .packlist.new .packlist
 )
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
