@@ -4,27 +4,12 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	DBD
 %define		pnam	CSV
-Summary:	DBD::CSV Perl module
-Summary(cs):	Modul DBD::CSV pro Perl
-Summary(da):	Perlmodul DBD::CSV
-Summary(de):	DBD::CSV Perl Modul
-Summary(es):	Módulo de Perl DBD::CSV
-Summary(fr):	Module Perl DBD::CSV
-Summary(it):	Modulo di Perl DBD::CSV
-Summary(ja):	DBD::CSV Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	DBD::CSV ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul DBD::CSV
-Summary(pl):	Modu³ Perla DBD::CSV
-Summary(pt):	Módulo de Perl DBD::CSV
-Summary(pt_BR):	Módulo Perl DBD::CSV
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl DBD::CSV
-Summary(sv):	DBD::CSV Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl DBD::CSV
-Summary(zh_CN):	DBD::CSV Perl Ä£¿é
+Summary:	DBD::CSV - DBI driver for CSV files.
+Summary(pl):	DBD::CSV - sterownik DBI dla plików CSV.
 Name:		perl-DBD-CSV
 Version:	0.2002
-Release:	2
-License:	GPL
+Release:	3
+License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
@@ -38,10 +23,19 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-DBD::CSV - DBI driver for CSV files.
+The DBD::CSV module is yet another driver for the DBI (Database
+Independent Interface for Perl). This one is based on the SQL "engine"
+SQL::Statement and the abstract DBI driver DBD::File and implements
+access to so-called CSV files (Comma separated values). Such files are
+mostly used for exporting MS Access and MS Excel data.
 
 %description -l pl
-DBD::CSV - sterownik DBI dla plików CSV.
+Modu³ DBD::CSV jest kolejnym sterownikiem dla DBI (Database Independent
+Interface).  Opiera siê na ,,silniku'' SQL -- SQL::Statement, oraz
+abstrakcyjnym sterowniku DBD::File (za³±czonym w tej dystrybucji).
+Implementuje dostêp do tzw. plików CSV (Comma Separated Values --
+,,warto¶ci oddzielone ¶rednikami'').  Ten format plików spotykany jest
+najczê¶ciej przy eksportowaniu danych z programów MS Access i MS Excel.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -64,4 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %{perl_sitelib}/DBD/CSV.pm
 %{perl_sitelib}/DBD/File.pm
-%{_mandir}/man3/*
+%{_mandir}/man3/DBD*
