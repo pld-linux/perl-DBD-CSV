@@ -4,8 +4,8 @@
 Summary:	DBD::CSV perl module
 Summary(pl):	Modu³ perla DBD::CSV
 Name:		perl-DBD-CSV
-Version:	0.1027
-Release:	5
+Version:	0.2002
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -45,4 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %{perl_sitelib}/DBD/CSV.pm
 %{perl_sitelib}/DBD/File.pm
-%{_mandir}/man3/DBD*
+%{perl_sitelib}/Bundle/DBD/CSV.pm
+%{_mandir}/man3/*
