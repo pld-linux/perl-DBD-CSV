@@ -8,19 +8,21 @@
 Summary:	DBD::CSV - DBI driver for CSV files
 Summary(pl):	DBD::CSV - sterownik DBI dla plików CSV
 Name:		perl-DBD-CSV
-Version:	0.2002
-Release:	4
+Version:	0.21
+Release:	1
+Epoch:		1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	9a98138aee1c94747d86494ceb343c2b
-BuildRequires:	perl-devel >= 5.6
+# Source0-md5:	cab819dfee1c4274bb29bd4f1958dc6c
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-DBI
+BuildRequires:	perl-DBI >= 1.42
 BuildRequires:	perl-SQL-Statement
 BuildRequires:	perl-Text-CSV_XS
 %endif
+Requires:	perl-DBI >= 1.42
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,7 +53,8 @@ najczê¶ciej przy eksportowaniu danych z programów MS Access i MS Excel.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,5 +63,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %{perl_vendorlib}/DBD/CSV.pm
-%{perl_vendorlib}/DBD/File.pm
 %{_mandir}/man3/DBD*
