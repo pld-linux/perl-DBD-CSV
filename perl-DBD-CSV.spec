@@ -1,6 +1,7 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# Do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	DBD
 %define		pnam	CSV
@@ -15,7 +16,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 # Source0-md5:	9a98138aee1c94747d86494ceb343c2b
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{with tests}
 BuildRequires:	perl-DBI
 BuildRequires:	perl-SQL-Statement
 BuildRequires:	perl-Text-CSV_XS
@@ -45,7 +46,7 @@ najczê¶ciej przy eksportowaniu danych z programów MS Access i MS Excel.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
