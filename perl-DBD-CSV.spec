@@ -1,3 +1,6 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	DBD
 %define		pnam	CSV
@@ -25,10 +28,12 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+%if %{?_without_tests:0}%{!?_without_tests:1}
 BuildRequires:	perl-DBI
 BuildRequires:	perl-SQL-Statement
 BuildRequires:	perl-Text-CSV_XS
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,6 +49,7 @@ DBD::CSV - sterownik DBI dla plików CSV.
 %build
 perl Makefile.PL
 %{__make}
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,5 +64,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %{perl_sitelib}/DBD/CSV.pm
 %{perl_sitelib}/DBD/File.pm
-%{perl_sitelib}/Bundle/DBD
 %{_mandir}/man3/*
