@@ -4,8 +4,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	DBD
 %define		pnam	CSV
-Summary:	DBD::CSV - DBI driver for CSV files.
-Summary(pl):	DBD::CSV - sterownik DBI dla plików CSV.
+Summary:	DBD::CSV - DBI driver for CSV files
+Summary(pl):	DBD::CSV - sterownik DBI dla plików CSV
 Name:		perl-DBD-CSV
 Version:	0.2002
 Release:	3
