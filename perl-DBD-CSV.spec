@@ -2,9 +2,9 @@
 Summary:	DBD-CSV perl module
 Summary(pl):	Modu³ perla DBD-CSV
 Name:		perl-DBD-CSV
-Version:	0.1021
-Release:	3
-Copyright:	GPL
+Version:	0.1022
+Release:	1
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBD/DBD-CSV-%{version}.tar.gz
