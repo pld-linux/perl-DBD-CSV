@@ -8,8 +8,7 @@ Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBD/DBD-CSV-%{version}.tar.gz
-Patch:		perl-DBD-CSV-fmt.patch
-BuildRequires:	rpm-perlprov >= 3.0.3-15
+BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
 BuildRequires:	perl-DBI
 BuildRequires:	perl-Text-CSV_XS
@@ -26,7 +25,6 @@ DBD-CSV - sterownik DBI dla plików CSV.
 
 %prep
 %setup -q -n DBD-CSV-%{version}
-%patch -p0
 
 %build
 perl Makefile.PL
