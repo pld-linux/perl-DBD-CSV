@@ -3,8 +3,8 @@
 %bcond_without	tests	# Do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	DBD
-%define	pnam	CSV
+%define		pdir	DBD
+%define		pnam	CSV
 Summary:	DBD::CSV - DBI driver for CSV files
 Summary(pl):	DBD::CSV - sterownik DBI dla plików CSV
 Name:		perl-DBD-CSV
