@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	DBD
 %define	pnam	CSV
-%include	/usr/lib/rpm/macros.perl
 Summary:	DBD-CSV perl module
 Summary(pl):	Modu³ perla DBD-CSV
 Name:		perl-DBD-CSV
 Version:	0.1027
-Release:	4
-
+Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -25,7 +24,7 @@ DBD-CSV - DBI driver for CSV files.
 DBD-CSV - sterownik DBI dla plików CSV.
 
 %prep
-%setup -q -n DBD-CSV-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
