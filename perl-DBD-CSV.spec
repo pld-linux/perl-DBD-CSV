@@ -14,8 +14,6 @@ BuildRequires:	perl >= 5.6
 BuildRequires:	perl-DBI
 BuildRequires:	perl-Text-CSV_XS
 BuildRequires:	perl-SQL-Statement
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
