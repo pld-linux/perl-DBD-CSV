@@ -3,7 +3,7 @@ Summary:	DBD-CSV perl module
 Summary(pl):	Modu³ perla DBD-CSV
 Name:		perl-DBD-CSV
 Version:	0.1027
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
@@ -43,7 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%{perl_sitelib}/Bundle/DBD/CSV.pm
 %{perl_sitelib}/DBD/CSV.pm
 %{perl_sitelib}/DBD/File.pm
-%{_mandir}/man3/*
+%{_mandir}/man3/DBD*
