@@ -8,13 +8,13 @@
 Summary:	DBD::CSV - DBI driver for CSV files
 Summary(pl):	DBD::CSV - sterownik DBI dla plików CSV
 Name:		perl-DBD-CSV
-Version:	0.21
+Version:	0.22
 Release:	1
 Epoch:		1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	cab819dfee1c4274bb29bd4f1958dc6c
+# Source0-md5:	365517fb2e0f565b16613eac01046d85
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -63,4 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %{perl_vendorlib}/DBD/CSV.pm
-%{_mandir}/man3/DBD*
+%{perl_vendorlib}/Bundle/DBD/CSV.pm
+%{_mandir}/man3/*.3pm.gz
