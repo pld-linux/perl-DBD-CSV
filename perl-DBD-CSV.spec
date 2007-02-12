@@ -6,7 +6,7 @@
 %define		pdir	DBD
 %define		pnam	CSV
 Summary:	DBD::CSV - DBI driver for CSV files
-Summary(pl):	DBD::CSV - sterownik DBI dla plików CSV
+Summary(pl.UTF-8):   DBD::CSV - sterownik DBI dla plikÃ³w CSV
 Name:		perl-DBD-CSV
 Version:	0.22
 Release:	3
@@ -34,13 +34,13 @@ SQL::Statement and the abstract DBI driver DBD::File and implements
 access to so-called CSV files (Comma separated values). Such files are
 mostly used for exporting MS Access and MS Excel data.
 
-%description -l pl
-Modu³ DBD::CSV jest kolejnym sterownikiem dla DBI (Database Independent
-Interface).  Opiera siê na ,,silniku'' SQL -- SQL::Statement, oraz
-abstrakcyjnym sterowniku DBD::File (za³±czonym w tej dystrybucji).
-Implementuje dostêp do tzw. plików CSV (Comma Separated Values --
-,,warto¶ci oddzielone ¶rednikami'').  Ten format plików spotykany jest
-najczê¶ciej przy eksportowaniu danych z programów MS Access i MS Excel.
+%description -l pl.UTF-8
+ModuÅ‚ DBD::CSV jest kolejnym sterownikiem dla DBI (Database Independent
+Interface).  Opiera siÄ™ na ,,silniku'' SQL -- SQL::Statement, oraz
+abstrakcyjnym sterowniku DBD::File (zaÅ‚Ä…czonym w tej dystrybucji).
+Implementuje dostÄ™p do tzw. plikÃ³w CSV (Comma Separated Values --
+,,wartoÅ›ci oddzielone Å›rednikami'').  Ten format plikÃ³w spotykany jest
+najczÄ™Å›ciej przy eksportowaniu danych z programÃ³w MS Access i MS Excel.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
