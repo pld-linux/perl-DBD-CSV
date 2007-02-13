@@ -6,7 +6,7 @@
 %define		pdir	DBD
 %define		pnam	CSV
 Summary:	DBD::CSV - DBI driver for CSV files
-Summary(pl.UTF-8):   DBD::CSV - sterownik DBI dla plików CSV
+Summary(pl.UTF-8):	DBD::CSV - sterownik DBI dla plików CSV
 Name:		perl-DBD-CSV
 Version:	0.22
 Release:	3
