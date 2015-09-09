@@ -8,13 +8,13 @@
 Summary:	DBD::CSV - DBI driver for CSV files
 Summary(pl.UTF-8):	DBD::CSV - sterownik DBI dla plików CSV
 Name:		perl-DBD-CSV
-Version:	0.22
-Release:	3
+Version:	0.48
+Release:	1
 Epoch:		1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/DBD/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	365517fb2e0f565b16613eac01046d85
+Source0:	http://www.cpan.org/modules/by-module/DBD/%{pdir}-%{pnam}-%{version}.tgz
+# Source0-md5:	11391a868171dfe493f0a907d8c33596
 URL:		http://search.cpan.org/dist/DBD-CSV/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -47,7 +47,7 @@ najczęściej przy eksportowaniu danych z programów MS Access i MS Excel.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
+AUTOMATED_TESTING=1 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
 %{?with_tests:%{__make} test}
@@ -65,4 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %{perl_vendorlib}/DBD/CSV.pm
+%dir %{perl_vendorlib}/DBD/CSV
+%{perl_vendorlib}/DBD/CSV/GetInfo.pm
+%{perl_vendorlib}/DBD/CSV/TypeInfo.pm
 %{_mandir}/man3/DBD*.3pm*
