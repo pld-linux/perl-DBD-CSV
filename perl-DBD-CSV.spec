@@ -36,12 +36,13 @@ access to so-called CSV files (Comma separated values). Such files are
 mostly used for exporting MS Access and MS Excel data.
 
 %description -l pl.UTF-8
-Moduł DBD::CSV jest kolejnym sterownikiem dla DBI (Database Independent
-Interface).  Opiera się na ,,silniku'' SQL -- SQL::Statement, oraz
-abstrakcyjnym sterowniku DBD::File (załączonym w tej dystrybucji).
-Implementuje dostęp do tzw. plików CSV (Comma Separated Values --
-,,wartości oddzielone średnikami'').  Ten format plików spotykany jest
-najczęściej przy eksportowaniu danych z programów MS Access i MS Excel.
+Moduł DBD::CSV jest kolejnym sterownikiem dla DBI (Database
+Independent Interface). Opiera się na ,,silniku'' SQL --
+SQL::Statement, oraz abstrakcyjnym sterowniku DBD::File (załączonym w
+tej dystrybucji). Implementuje dostęp do tzw. plików CSV (Comma
+Separated Values -- ,,wartości oddzielone średnikami''). Ten format
+plików spotykany jest najczęściej przy eksportowaniu danych z
+programów MS Access i MS Excel.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -54,9 +55,13 @@ AUTOMATED_TESTING=1 %{__perl} Makefile.PL \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# don't package Bundle and Test
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man3/Bundle::DBD::CSV.3pm
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Bundle/DBD/CSV.pm
+%{__rm} -r $RPM_BUILD_ROOT%{perl_vendorlib}/DBI/Test
 
 %clean
 rm -rf $RPM_BUILD_ROOT
