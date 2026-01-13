@@ -8,7 +8,7 @@ Summary:	DBD::CSV - DBI driver for CSV files
 Summary(pl.UTF-8):	DBD::CSV - sterownik DBI dla plików CSV
 Name:		perl-DBD-CSV
 Version:	0.48
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
